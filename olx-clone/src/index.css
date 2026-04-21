@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-khareedo-main: #002f34;
+  --color-khareedo-accent: #00d5f5;
+  --color-khareedo-price: #3a77ff;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f8f9fb] text-[#002f34] antialiased scroll-smooth;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.khareedo-btn {
+  @apply bg-[#002f34] hover:bg-[#003f44] text-white font-black py-2.5 px-6 rounded-lg transition-all duration-300 shadow-sm active:scale-95 flex items-center justify-center;
+}
+
+.khareedo-btn-secondary {
+  @apply bg-white hover:bg-gray-50 text-[#002f34] border-2 border-[#002f34] font-black py-2.5 px-6 rounded-lg transition-all duration-200 active:scale-95 flex items-center justify-center;
+}
+
+.khareedo-card {
+  @apply bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
+}
+
+.glass-nav {
+  @apply bg-white/90 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50;
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, #002f34 0%, #004f56 100%);
+}
+
+.amazon-gradient {
+  background: linear-gradient(135deg, #232f3e 0%, #37475a 100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
