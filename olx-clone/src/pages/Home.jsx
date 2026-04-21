@@ -6,6 +6,8 @@ import {
   Smartphone, Car, Home as HomeIcon, Building2, 
   Cpu, Bike, Briefcase, Settings, BriefcaseIcon 
 } from 'lucide-react';
+import brandBanner from '../assets/brand-banner.png';
+import appPromo from '../assets/app-promo.png';
 
 export default function Home() {
   const { products, searchQuery } = useContext(ProductContext);
@@ -49,7 +51,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 py-8">
          <div className="w-full h-[200px] md:h-[260px] overflow-hidden rounded-[8px] shadow-lg border border-gray-100 group bg-[#002f34]">
             <img 
-              src="/brand-banner.png" 
+              src={brandBanner} 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
               alt="Khareedo Influence" 
               onError={(e) => { e.target.style.display = 'none'; }}
@@ -165,7 +167,7 @@ export default function Home() {
                 <div className="md:w-1/2">
                    <div className="relative group">
                       <img 
-                        src="/app-promo.png" 
+                        src={appPromo} 
                         alt="Khareedo App" 
                         className="w-full max-w-[500px] rounded-[4px] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]" 
                         onError={(e) => { e.target.style.display = 'none'; }}
